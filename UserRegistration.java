@@ -65,6 +65,19 @@ public class UserRegistration {
         }
     }
 
+    void checkPassword() {
+        System.out.println("Enter Your password");
+        String password = scan.next();
+
+        String Regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!#%*?&])[A-Za-z\\d@$!#%*?&]{8,}$";
+
+        boolean result = password.matches(Regex);
+        if (result) {
+            System.out.println("Given password is valid");
+        } else {
+            System.out.println("Given password is not valid");
+        }
+    }
 
 
 }
