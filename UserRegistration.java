@@ -37,6 +37,20 @@ public class UserRegistration {
 
     }
 
+    void checkEmail() {
+        System.out.println("Enter Your email");
+        String email = scan.next();
+
+        String emailRegex = "^[a-z]{3}[a-zA-Z0-9+_.-]+@[bl.co]{5}[a-z.]+$";
+
+        boolean result = email.matches(emailRegex);
+        if (result) {
+            System.out.println("Given email-id is valid");
+        } else {
+            System.out.println("Given email-id is not valid");
+        }
+    }
+
 
 }
 
@@ -45,6 +59,6 @@ public class UserRegistration {
 class Main{
     public static void main(String[] args) {
         UserRegistration user = new UserRegistration();
-        user.checkLastName();
+        user.checkEmail();
     }
 }
