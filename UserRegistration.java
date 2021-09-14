@@ -51,6 +51,21 @@ public class UserRegistration {
         }
     }
 
+    void checkPhone() {
+        System.out.println("Enter Your phone number");
+        String phoneNo = scan.next();
+
+        String Regex = "^[91]{2}\\s[0-9]{10}$";
+
+        boolean result = phoneNo.matches(Regex);
+        if (result) {
+            System.out.println("Given phone number is valid");
+        } else {
+            System.out.println("Given phone number is not valid");
+        }
+    }
+
+
 
 }
 
@@ -59,6 +74,6 @@ public class UserRegistration {
 class Main{
     public static void main(String[] args) {
         UserRegistration user = new UserRegistration();
-        user.checkEmail();
+        user.checkPhone();
     }
 }
