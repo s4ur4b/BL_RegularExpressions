@@ -79,7 +79,16 @@ public class UserRegistration {
         }
     }
 
+    void checkEmailList() {
+        String emailArray[] = {"abc@yahoo.com", "abc-100@yahoo.com" ,"abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net",
+                "abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"};
 
+        String emailRegex = "^[a-zA-Z0-9]+.[a-zA-Z0-9+_-]+@[a-zA-Z0-9+_-]+.[a-z]+.[a-z]+$";
+        for (String email: emailArray) {
+            boolean result = email.matches(emailRegex);
+            System.out.println(email+" : "+result);
+        }
+    }
 }
 
 
