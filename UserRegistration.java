@@ -22,6 +22,22 @@ public class UserRegistration {
 
     }
 
+    void checkLastName(){
+        System.out.println("Enter Your Name");
+        String lastName = scan.next();
+
+        String nameRegex = "^[A-Z]{1}[a-z]{2,15}$";
+
+        Pattern pattern = Pattern.compile(nameRegex);
+
+        Matcher matcher = pattern.matcher(lastName);
+
+
+        System.out.println("valid last Name: " + matcher.matches());
+
+    }
+
+
 }
 
 
@@ -29,6 +45,6 @@ public class UserRegistration {
 class Main{
     public static void main(String[] args) {
         UserRegistration user = new UserRegistration();
-        user.checkName();
+        user.checkLastName();
     }
 }
